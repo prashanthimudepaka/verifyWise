@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerifyWise - AI-Powered Fake News Detection</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+  <!-- Background Video CSS -->
+  <style>
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      filter: blur(0px) brightness(100%);
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    /* Mobile Menu Custom Styles */
+    #mobileMenu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      #mobileMenu.active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="./wh.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="video-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="bg-white p-4 shadow-md fixed top-0 left-0 w-full z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold text-blue-600">VerifyWise</a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="text-lg text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#about" class="text-lg text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="contact.html" class="text-lg text-gray-700 hover:text-blue-600">Contact Us</a>
+        <a href="signin.html" class="text-lg text-gray-700 hover:text-blue-600">Sign In</a>
+        <a href="signup.html" class="text-lg text-gray-700 hover:text-blue-600">Sign Up</a>
+      </div>
+      <!-- Mobile Menu Toggle -->
+      <button id="menuToggle" class="md:hidden text-gray-700 hover:text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden bg-white bg-opacity-95 px-6 py-4 space-y-2 font-medium shadow">
+    <a href="#home" class="block hover:text-blue-600">Home</a>
+    <a href="#about" class="block hover:text-blue-600">About Us</a>
+    <a href="#contact" class="block hover:text-blue-600">Contact Us</a>
+    <a href="#signin" class="block hover:text-blue-600">Sign In</a>
+    <a href="#signup" class="block hover:text-blue-600">Sign Up</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-white bg-opacity-80 py-20" id="home">
+    <div class="container mx-auto text-center px-6">
+      <h1 class="text-4xl font-bold mb-4">Stop Fake News in Its Tracks</h1>
+      <p class="text-lg mb-8">Instantly verify news, articles, and images with AI-powered accuracy.</p>
+      <a href="#" class="bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition">Try It Free Now</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="bg-gray-50 bg-opacity-80 py-16" id="about">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">What You Can Do with VerifyWise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Feature Cards -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Headline & Text Verification</h3>
+          <p>Paste news headlines or content and instantly verify authenticity using NLP and trusted databases.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Image Verification</h3>
+          <p>Upload an image and our AI scans it for manipulation using reverse image search and metadata checks.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">URL Authenticity Check</h3>
+          <p>Enter a link to any article or post. We'll analyze the source, cross-check claims, and show trust ratings.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Credibility Score</h3>
+          <p>Get a detailed score based on source reliability, bias detection, and third-party fact checks.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Trending Misinformation Alerts</h3>
+          <p>Stay updated on viral fake news circulating online via real-time alerts and dashboards.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">AI-Powered Fact-Checking</h3>
+          <p>Trained on millions of data points, our machine learning model evolves with real-world misinformation trends.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Community Reporting</h3>
+          <p>Users can flag suspicious content and vote on credibility — your input helps everyone.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Educational Hub</h3>
+          <p>Access interactive tutorials, tips, and examples to improve your ability to identify fake news independently.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Multilingual Support</h3>
+          <p>Use VerifyWise in multiple languages to detect misinformation across different regions.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Web Dashboard Access</h3>
+          <p>Sync with your desktop dashboard for a complete breakdown of analysis reports and fact-checking history.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="bg-white bg-opacity-80 py-16" id="how-it-works">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+      <div class="flex flex-col md:flex-row justify-center items-start md:space-x-8 space-y-6 md:space-y-0">
+        <div class="flex-1">
+          <span class="text-4xl font-bold text-blue-600">1</span>
+          <h4 class="mt-2 font-semibold">Submit Content</h4>
+          <p>Paste a URL, upload an image, or type text.</p>
+        </div>
+        <div class="flex-1">
+          <span class="text-4xl font-bold text-blue-600">2</span>
+          <h4 class="mt-2 font-semibold">AI Analysis</h4>
+          <p>Our AI scans and cross-references data from trusted sources.</p>
+        </div>
+        <div class="flex-1">
+          <span class="text-4xl font-bold text-blue-600">3</span>
+          <h4 class="mt-2 font-semibold">Get Results</h4>
+          <p>Receive a clear authenticity report with confidence score.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-gray-50 bg-opacity-80" id="testimonials">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">“VerifyWise saved me from sharing false news during my research.”</p>
+          <p class="mt-4 font-semibold">— Priya, Journalism Student</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">“A game-changer for my editorial team’s fact-checking workflow.”</p>
+          <p class="mt-4 font-semibold">— Raj, Media Editor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600 bg-opacity-90 py-16" id="cta">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-white text-3xl font-bold mb-4">Ready to Verify the Truth?</h2>
+      <a href="#" class="bg-white text-blue-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition">Get Started Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+      <p>Contact us: support@verifywise.com | +1-234-567-8901</p>
+      <p class="mt-2">© 2025 VerifyWise. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
